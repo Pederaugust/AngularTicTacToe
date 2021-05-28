@@ -1,0 +1,14 @@
+
+<h4 *ngIf="this.turn == 1">Turn: X</h4>
+<h4 *ngIf="this.turn == 2">Turn: O</h4>
+<app-board [board]="board" (move)="makeMove($event)"></app-board>
+
+<div class="section">
+    <button class="btn" (click)="newGame()">New Game</button>
+    <button class="btn" (click)="resetGame()">Reset Game</button>
+    <h3 *ngIf="this.winner == 2">O is the winner</h3>
+    <h3 *ngIf="this.winner == 1">X is the winner</h3>
+    <h3 *ngIf="this.tied">Tie</h3>
+    <h5>X Score: {{score.x}}</h5>
+    <h5>O Score: {{score.o}}</h5>
+</div>
